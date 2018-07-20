@@ -4,7 +4,6 @@
 	Python script in report bad IPs to AbuseIPDB in bulk
 """
 __author__ = "Shubham Hibare"
-__copyright__ = "Copyright 2007, The Cogent Project"
 __version__ = "1.2"
 __maintainer__ = "Shubham Hibare"
 __email__ = "shubham@hibare.in"
