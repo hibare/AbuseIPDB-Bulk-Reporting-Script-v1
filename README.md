@@ -17,7 +17,7 @@ To use AbuseIPDB reporting API, you need an API key. Get it by creating an accou
 ```
 python3 abuseIPDB.py -k <AabuseIPDB API key> -f <input filename>
 ```
-both toptions are required.
+both options are required.
 - Use -h option for help.
 - Current submission status will be printed on the screen.
 - An output file will be create with name *AbuseIPDB_Submission_Status.csv* containing complete results.
