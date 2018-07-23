@@ -21,3 +21,6 @@ both options are required.
 - Use -h option for help.
 - Current submission status will be printed on the screen.
 - An output file will be create with name *AbuseIPDB_Submission_Status.csv* containing complete results.
+
+
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/hibare)
