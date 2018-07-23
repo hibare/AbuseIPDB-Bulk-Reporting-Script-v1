@@ -116,6 +116,9 @@ if __name__ == '__main__':
 	parser.add_argument('-f', '--inputfilename', type=str, metavar='<input filename>', help='Input file name', required=True)
 	args = parser.parse_args()
 	
+	# default grant 'no'
+	proceed = 'n
+	
 	# check if file exists and readable
 	if os.path.isfile(args.inputfilename) and os.access(args.inputfilename, os.R_OK):
 		reportingCategories = {3: 'Fraud Orders', 
@@ -162,9 +165,9 @@ if __name__ == '__main__':
 		print("\nPlease verify:")
 		print("Category: {0}".format(category))
 		print("comment: {0}".format(comment))
-		proced = input("\nContinue [y/n]? ")
+		proceed = input("\nContinue [y/n]? ")
 
-		if proced == "y":
+		if proceed == "y":
 			#call getIPDetails function
 			postIP(args.APIKey, args.inputfilename, category, comment)
 		else:
