@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """ 
-	Python script in report bad IPs to AbuseIPDB in bulk
+	Python script to report bad IPs to AbuseIPDB in bulk
 """
 __author__ = "Shubham Hibare"
 __version__ = "1.2"
