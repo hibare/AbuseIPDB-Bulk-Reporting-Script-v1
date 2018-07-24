@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ## Other requirements
 To use AbuseIPDB reporting API, you need an API key. Get it by creating an account at [AbuseIPDB](https://www.abuseipdb.com).
 
-## Using AbuseIPDB bulk reporting script
+## Usage
 - Create a input file with all IP addresses one per line.
 - Use following command to run script.
 ```
