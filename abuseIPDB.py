@@ -5,7 +5,7 @@
 """
 
 __author__ = "Shubham Hibare"
-__version__ = "1.3"
+__version__ = "1.4"
 __maintainer__ = "Shubham Hibare"
 __email__ = "shubham@hibare.in"
 
@@ -16,6 +16,7 @@ import sys
 import os
 import argparse
 import ipaddress
+import time
 
 # function to validate an IP address
 def validateIP(ipaddressToValidate):
@@ -84,22 +85,29 @@ def postIP(APIKey, inputFileName, category, comment):
 					payload = {'key': APIKey, 'category': category, 'comment': comment, 'ip': ip}
 					url = 'https://www.abuseipdb.com/report/json'
 
-					# make request to abuseIPDB API
-					abuseipdbRequest = requests.post(url, params=payload)
-					
-					if abuseipdbRequest.ok:
-						# parse JSON data
-						datastore = json.loads(abuseipdbRequest.text)
+					try:
+						# make request to abuseIPDB API
+						abuseipdbRequest = requests.post(url, params=payload)
 						
-						# check submission status
-						if datastore.get('success'):
-							submissionStatus = 'Success'
+						if abuseipdbRequest.ok:
+							# parse JSON data
+							datastore = json.loads(abuseipdbRequest.text)
+							
+							# check submission status
+							if datastore.get('success'):
+								submissionStatus = 'Success'
+							else:
+								submissionStatus = 'Failed'
+								failedIP.append(ip)
 						else:
-							submissionStatus = 'Failed'
+							submissionStatus = 'Request failed'
 							failedIP.append(ip)
-					else:
-						submissionStatus = 'Request failed'
+					
+					except Exception as e:
+						submissionStatus = "Error - {}".format(e)
 						failedIP.append(ip)
+						time.sleep(60)
+						continue
 
 				else:
 					submissionStatus = 'Invalid IP'
