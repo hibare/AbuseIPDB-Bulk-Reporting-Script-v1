@@ -17,6 +17,7 @@ import os
 import argparse
 import ipaddress
 import time
+import threading
 
 # function to validate an IP address
 def validateIP(ipaddressToValidate):
@@ -105,6 +106,7 @@ def postIP(APIKey, inputFileName, category, comment):
 					
 					except Exception as e:
 						submissionStatus = "Error - {}".format(e)
+						print("[{0}]".format(submissionStatus))
 						failedIP.append(ip)
 						time.sleep(60)
 						continue
