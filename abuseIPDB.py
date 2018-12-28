@@ -108,7 +108,7 @@ def postIP(APIKey, inputFileName, category, comment):
 						submissionStatus = "Error - {}".format(e)
 						print("[{0}]".format(submissionStatus))
 						failedIP.append(ip)
-						time.sleep(60)
+						time.sleep(30)
 						continue
 
 				else:
