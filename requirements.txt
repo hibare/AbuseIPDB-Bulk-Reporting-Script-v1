@@ -4,8 +4,6 @@
 #
 #    pip-compile
 #
---trusted-host pypi.org
-
 certifi==2020.12.5
     # via requests
 chardet==3.0.4
@@ -14,7 +12,7 @@ idna==2.7
     # via requests
 ipaddress==1.0.23
     # via -r requirements.in
-requests==2.25.0
+requests==2.25.1
     # via -r requirements.in
 urllib3==1.25.9
     # via requests
