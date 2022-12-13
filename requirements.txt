@@ -4,9 +4,7 @@
 #
 #    pip-compile requirements.in
 #
---trusted-host pypi.org
-
-certifi==2021.10.8
+certifi==2022.12.7
     # via requests
 charset-normalizer==2.0.10
     # via requests
